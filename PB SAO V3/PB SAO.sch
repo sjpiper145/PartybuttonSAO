@@ -1,0 +1,427 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Device:LED D1
+U 1 1 614321EB
+P 5800 1250
+F 0 "D1" H 5793 995 50  0000 C CNN
+F 1 "LED" H 5793 1086 50  0000 C CNN
+F 2 "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5800 1250 50  0001 C CNN
+F 3 "~" H 5800 1250 50  0001 C CNN
+	1    5800 1250
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:Battery_Cell BT1
+U 1 1 61432868
+P 1100 1950
+F 0 "BT1" H 1218 2046 50  0000 L CNN
+F 1 "CR2032" H 1218 1955 50  0000 L CNN
+F 2 "Battery:BatteryHolder_Keystone_3034_1x20mm" V 1100 2010 50  0001 C CNN
+F 3 "~" V 1100 2010 50  0001 C CNN
+	1    1100 1950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_Push SW1
+U 1 1 614345B3
+P 7150 1800
+F 0 "SW1" H 7150 1600 50  0000 C CNN
+F 1 "SW_Push" H 7150 1700 50  0000 C CNN
+F 2 "Button_Switch_THT:SW_PUSH_6mm" H 7150 2000 50  0001 C CNN
+F 3 "~" H 7150 2000 50  0001 C CNN
+	1    7150 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR02
+U 1 1 61436A40
+P 1100 2150
+F 0 "#PWR02" H 1100 1900 50  0001 C CNN
+F 1 "GND" H 1105 1977 50  0000 C CNN
+F 2 "" H 1100 2150 50  0001 C CNN
+F 3 "" H 1100 2150 50  0001 C CNN
+	1    1100 2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR01
+U 1 1 614371FD
+P 1100 1650
+F 0 "#PWR01" H 1100 1500 50  0001 C CNN
+F 1 "+3.3V" H 1115 1823 50  0000 C CNN
+F 2 "" H 1100 1650 50  0001 C CNN
+F 3 "" H 1100 1650 50  0001 C CNN
+	1    1100 1650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1100 1650 1100 1750
+Wire Wire Line
+	1100 2150 1100 2050
+$Comp
+L Device:LED D2
+U 1 1 614395EE
+P 5800 1650
+F 0 "D2" H 5793 1395 50  0000 C CNN
+F 1 "LED" H 5793 1486 50  0000 C CNN
+F 2 "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5800 1650 50  0001 C CNN
+F 3 "~" H 5800 1650 50  0001 C CNN
+	1    5800 1650
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:LED D3
+U 1 1 614397E3
+P 5800 2050
+F 0 "D3" H 5793 1795 50  0000 C CNN
+F 1 "LED" H 5793 1886 50  0000 C CNN
+F 2 "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5800 2050 50  0001 C CNN
+F 3 "~" H 5800 2050 50  0001 C CNN
+	1    5800 2050
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:+3.3V #PWR04
+U 1 1 6143A5C9
+P 2050 1750
+F 0 "#PWR04" H 2050 1600 50  0001 C CNN
+F 1 "+3.3V" H 2065 1923 50  0000 C CNN
+F 2 "" H 2050 1750 50  0001 C CNN
+F 3 "" H 2050 1750 50  0001 C CNN
+	1    2050 1750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6150 2050 5950 2050
+Wire Wire Line
+	5950 1650 6150 1650
+Wire Wire Line
+	6150 1650 6150 2050
+Connection ~ 6150 2050
+Wire Wire Line
+	5950 1250 6150 1250
+Wire Wire Line
+	6150 1250 6150 1650
+Connection ~ 6150 1650
+Wire Wire Line
+	5500 1250 5500 1650
+Wire Wire Line
+	5500 1650 5650 1650
+Wire Wire Line
+	5500 1250 5650 1250
+Wire Wire Line
+	5650 2050 5500 2050
+Wire Wire Line
+	5500 2050 5500 1650
+Connection ~ 5500 1650
+$Comp
+L Transistor_FET:2N7002 Q1
+U 1 1 6143C958
+P 6050 2900
+F 0 "Q1" H 6254 2946 50  0000 L CNN
+F 1 "2N7002" H 6254 2855 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23_Handsoldering" H 6250 2825 50  0001 L CIN
+F 3 "https://www.onsemi.com/pub/Collateral/NDS7002A-D.PDF" H 6050 2900 50  0001 L CNN
+	1    6050 2900
+	1    0    0    -1  
+$EndComp
+Text Label 7700 2000 0    50   ~ 0
+IO_high
+$Comp
+L Connector_Generic:Conn_02x03_Odd_Even J1
+U 1 1 61477E21
+P 2450 1950
+F 0 "J1" H 2500 2267 50  0000 C CNN
+F 1 "SAO_F" H 2500 2176 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x03_P2.54mm_Vertical" H 2450 1950 50  0001 C CNN
+F 3 "~" H 2450 1950 50  0001 C CNN
+	1    2450 1950
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR03
+U 1 1 61479B8F
+P 2900 1950
+F 0 "#PWR03" H 2900 1700 50  0001 C CNN
+F 1 "GND" H 2905 1777 50  0000 C CNN
+F 2 "" H 2900 1950 50  0001 C CNN
+F 3 "" H 2900 1950 50  0001 C CNN
+	1    2900 1950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2050 1850 2150 1850
+Wire Wire Line
+	2050 1850 2050 1750
+NoConn ~ 2650 1950
+NoConn ~ 2150 1950
+Wire Wire Line
+	2150 2050 2100 2050
+Wire Wire Line
+	2100 2050 2100 2150
+Wire Wire Line
+	2100 2150 2750 2150
+Wire Wire Line
+	2750 2150 2750 2050
+Wire Wire Line
+	2750 2050 2650 2050
+$Comp
+L Connector_Generic:Conn_02x03_Odd_Even J2
+U 1 1 6147CDEA
+P 7700 1700
+F 0 "J2" H 7750 2017 50  0000 C CNN
+F 1 "SAO_F" H 7750 1926 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x03_P2.54mm_Vertical" H 7700 1700 50  0001 C CNN
+F 3 "~" H 7700 1700 50  0001 C CNN
+	1    7700 1700
+	1    0    0    -1  
+$EndComp
+Text Label 6900 1600 0    50   ~ 0
+VCC
+$Comp
+L power:GND #PWR06
+U 1 1 6147DC86
+P 8200 1700
+F 0 "#PWR06" H 8200 1450 50  0001 C CNN
+F 1 "GND" H 8205 1527 50  0000 C CNN
+F 2 "" H 8200 1700 50  0001 C CNN
+F 3 "" H 8200 1700 50  0001 C CNN
+	1    8200 1700
+	1    0    0    -1  
+$EndComp
+NoConn ~ 8000 1700
+NoConn ~ 7500 1700
+Text Label 5500 1250 0    50   ~ 0
+VCC
+$Comp
+L power:GND #PWR05
+U 1 1 6148268A
+P 6150 3200
+F 0 "#PWR05" H 6150 2950 50  0001 C CNN
+F 1 "GND" H 6155 3027 50  0000 C CNN
+F 2 "" H 6150 3200 50  0001 C CNN
+F 3 "" H 6150 3200 50  0001 C CNN
+	1    6150 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6150 3100 6150 3200
+Text Label 5500 2900 0    50   ~ 0
+IO_high
+Text Notes 1300 1100 0    50   ~ 0
+These components go on the stand
+Text Notes 4150 750  0    50   ~ 0
+These LED better be of the magical flashing variety
+Wire Notes Line
+	650  700  3150 700 
+Wire Notes Line
+	3150 700  3150 2500
+Wire Notes Line
+	3150 2500 650  2500
+Wire Notes Line
+	650  2500 650  700 
+$Comp
+L Device:LED D4
+U 1 1 6149776C
+P 5800 2450
+F 0 "D4" H 5793 2195 50  0000 C CNN
+F 1 "LED" H 5793 2286 50  0000 C CNN
+F 2 "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5800 2450 50  0001 C CNN
+F 3 "~" H 5800 2450 50  0001 C CNN
+	1    5800 2450
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	5650 2450 5500 2450
+Wire Wire Line
+	5500 2450 5500 2050
+Connection ~ 5500 2050
+Wire Wire Line
+	6150 2450 5950 2450
+Wire Wire Line
+	6150 2050 6150 2450
+Wire Wire Line
+	6150 2600 6150 2450
+Connection ~ 6150 2450
+Wire Wire Line
+	2650 1850 2900 1850
+Wire Wire Line
+	2900 1850 2900 1950
+Wire Wire Line
+	8000 1800 8050 1800
+Wire Wire Line
+	8050 1800 8050 2000
+Wire Wire Line
+	8050 2000 7700 2000
+Wire Wire Line
+	8200 1600 8200 1700
+Wire Wire Line
+	6950 1800 6900 1800
+Wire Wire Line
+	6900 1800 6900 1600
+Wire Wire Line
+	6900 1600 7500 1600
+Wire Wire Line
+	7350 1800 7450 1800
+$Comp
+L Device:LED D5
+U 1 1 614BF7B6
+P 5200 1250
+F 0 "D5" H 5193 995 50  0000 C CNN
+F 1 "LED" H 5193 1086 50  0000 C CNN
+F 2 "LED_THT:LED_D3.0mm" H 5200 1250 50  0001 C CNN
+F 3 "~" H 5200 1250 50  0001 C CNN
+	1    5200 1250
+	1    0    0    1   
+$EndComp
+$Comp
+L Device:LED D6
+U 1 1 614BF9A8
+P 5200 1650
+F 0 "D6" H 5193 1395 50  0000 C CNN
+F 1 "LED" H 5193 1486 50  0000 C CNN
+F 2 "LED_THT:LED_D3.0mm" H 5200 1650 50  0001 C CNN
+F 3 "~" H 5200 1650 50  0001 C CNN
+	1    5200 1650
+	1    0    0    1   
+$EndComp
+$Comp
+L Device:LED D7
+U 1 1 614BF9B2
+P 5200 2050
+F 0 "D7" H 5193 1795 50  0000 C CNN
+F 1 "LED" H 5193 1886 50  0000 C CNN
+F 2 "LED_THT:LED_D3.0mm" H 5200 2050 50  0001 C CNN
+F 3 "~" H 5200 2050 50  0001 C CNN
+	1    5200 2050
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	4850 2050 5050 2050
+Wire Wire Line
+	5050 1650 4850 1650
+Wire Wire Line
+	5050 1250 4850 1250
+Wire Wire Line
+	5500 1650 5350 1650
+Wire Wire Line
+	5500 1250 5350 1250
+Wire Wire Line
+	5350 2050 5500 2050
+$Comp
+L Device:LED D8
+U 1 1 614BF9CA
+P 5200 2450
+F 0 "D8" H 5193 2195 50  0000 C CNN
+F 1 "LED" H 5193 2286 50  0000 C CNN
+F 2 "LED_THT:LED_D3.0mm" H 5200 2450 50  0001 C CNN
+F 3 "~" H 5200 2450 50  0001 C CNN
+	1    5200 2450
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	5350 2450 5500 2450
+Wire Wire Line
+	4850 2450 5050 2450
+Text Notes 6250 1900 1    50   ~ 0
+SMD
+Text Notes 4800 1900 1    50   ~ 0
+THT
+$Comp
+L Transistor_FET:2N7002 Q2
+U 1 1 614D36A4
+P 4950 2900
+F 0 "Q2" H 5154 2946 50  0000 L CNN
+F 1 "2N7002" H 5154 2855 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-92" H 5150 2825 50  0001 L CIN
+F 3 "https://www.onsemi.com/pub/Collateral/NDS7002A-D.PDF" H 4950 2900 50  0001 L CNN
+	1    4950 2900
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0101
+U 1 1 614D3986
+P 4850 3200
+F 0 "#PWR0101" H 4850 2950 50  0001 C CNN
+F 1 "GND" H 4855 3027 50  0000 C CNN
+F 2 "" H 4850 3200 50  0001 C CNN
+F 3 "" H 4850 3200 50  0001 C CNN
+	1    4850 3200
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	4850 3100 4850 3200
+Wire Wire Line
+	4850 2600 4850 2450
+Connection ~ 4850 1650
+Wire Wire Line
+	4850 1650 4850 1250
+Connection ~ 4850 2050
+Wire Wire Line
+	4850 2050 4850 1650
+Connection ~ 4850 2450
+Wire Wire Line
+	4850 2450 4850 2050
+Connection ~ 5500 1250
+Connection ~ 5500 2450
+Wire Wire Line
+	6150 2600 4850 2600
+Wire Wire Line
+	5850 2900 5150 2900
+Wire Wire Line
+	4850 2700 4850 2600
+Connection ~ 4850 2600
+Wire Wire Line
+	6150 2700 6150 2600
+Connection ~ 6150 2600
+$Comp
+L Switch:SW_Push SW2
+U 1 1 6151C8E4
+P 7150 2200
+F 0 "SW2" H 7150 2000 50  0000 C CNN
+F 1 "SW_Push" H 7150 2100 50  0000 C CNN
+F 2 "Button_Switch_SMD:SW_Push_1P1T_NO_6x6mm_H9.5mm" H 7150 2400 50  0001 C CNN
+F 3 "~" H 7150 2400 50  0001 C CNN
+	1    7150 2200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7350 2200 7450 2200
+Wire Wire Line
+	7450 2200 7450 1800
+Connection ~ 7450 1800
+Wire Wire Line
+	7450 1800 7500 1800
+Wire Wire Line
+	6900 1800 6900 2200
+Wire Wire Line
+	6900 2200 6950 2200
+Connection ~ 6900 1800
+Wire Wire Line
+	8000 1600 8200 1600
+$Comp
+L Mechanical:MountingHole H1
+U 1 1 6152DD8A
+P 9950 1150
+F 0 "H1" H 10050 1196 50  0000 L CNN
+F 1 "MountingHole" H 10050 1105 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3mm" H 9950 1150 50  0001 C CNN
+F 3 "~" H 9950 1150 50  0001 C CNN
+	1    9950 1150
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC
